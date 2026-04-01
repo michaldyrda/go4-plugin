@@ -1,0 +1,31 @@
+{
+  "name": "go4-fashion",
+  "version": "0.1.0",
+  "description": "go4.fashion — AI-first operating system for premium fashion brands. Orders, invoicing, materials, BOM, shipping, knowledge base.",
+  "author": {
+    "name": "Michal"
+  },
+  "repository": "https://github.com/michal/go4-plugin",
+  "keywords": ["fashion", "erp", "invoicing", "materials", "orders"],
+  "skills": "./skills/",
+  "agents": "./agents/",
+  "mcpServers": {
+    "go4": {
+      "type": "http",
+      "url": "${user_config.go4_mcp_url}",
+      "headers": {
+        "Authorization": "Bearer ${user_config.go4_api_token}"
+      }
+    }
+  },
+  "userConfig": {
+    "go4_mcp_url": {
+      "description": "URL of your go4 MCP server (e.g. https://your-brand.railway.app/mcp)",
+      "sensitive": false
+    },
+    "go4_api_token": {
+      "description": "API token for your go4.fashion organization",
+      "sensitive": true
+    }
+  }
+}
