@@ -11,10 +11,9 @@ Import a sales order from an external document into go4.fashion.
 
 ## Before you start
 
-1. **Search RAG** for import rules:
-   - `knowledge_search(query: "order import rules", scope: "order_import")`
-   - Also search for the customer if known: `knowledge_search(query: "<customer name>", scope: "customer_behavior")`
-2. Apply any rules found (size format conventions, customer-specific pricing, etc.).
+RAG rules are loaded automatically by `import_order` — the tool returns them in `rag_rules`. Read them before evaluating any issues.
+
+Optionally also search for the customer: `knowledge_search(query: "<customer name>", scope: "customer_behavior")`
 
 ## Step 1: Identify the source
 
@@ -29,6 +28,8 @@ Read the document contents. Extract:
 - **Customer**: name, and any identifiers (email, tax_id)
 - **Items**: each line needs at least one identifier — `sku`, or `product_number` + `color` + `size`, or `product_name` + `color` + `size`
 - **Currency**, **order_date**, **declared_total** (if present)
+- **Collection**: name from document title, season (FW/SS + year), or product number prefix. Always pass as `collection_name` — the tool does fuzzy matching.
+- **Status**: use `status: "completed"` for historical orders (past collections, already fulfilled). Default is `draft`.
 
 Call `import_order` with `action: "parse"` and the extracted data.
 

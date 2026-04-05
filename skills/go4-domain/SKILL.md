@@ -56,6 +56,17 @@ Several tools use a parse→confirm pattern:
 2. Manager reviews and approves.
 3. Second call with confirmation flag or session_data executes the write.
 
-Tools using this: `import_order`, `create_billing_order`, `create_advance_invoice`, `assign_staging_media`, `import_collection`.
+Tools using this: `import_order`, `create_billing_order`, `create_advance_invoice`, `assign_staging_media`, `import_collection`, `reorder_media`, `update_media_assignment`, `manage_product_categories`.
 
 **Never skip the preview step.** Always show the manager what will happen before committing.
+
+## Media Tools
+
+- `list_media` — list media assigned to a product/collection/material. Use `artifact: true` to get an HTML thumbnail gallery in chat.
+- `assign_staging_media` — match files from Staging tab to products/collections/materials by filename.
+- `reorder_media` — change sort order via ordered list of `assignment_id`s.
+- `update_media_assignment` — change context (primary/gallery/swatch/…) or link to a specific color.
+
+## Product Tools
+
+- `manage_product_categories` — list, rename, move products between categories, delete empty categories.
