@@ -70,3 +70,8 @@ Tools using this: `import_order`, `create_billing_order`, `create_advance_invoic
 ## Product Tools
 
 - `manage_product_categories` — list, rename, move products between categories, delete empty categories.
+
+## BOM & Labels
+
+- `manage-bom` skill — view/edit BOM (materials, consumption, placement).
+- `label-composition` skill — calculate EU textile composition label (EU Reg. 1007/2011) from BOM data. Returns label text per color variant with fiber percentages.
