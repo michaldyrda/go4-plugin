@@ -75,3 +75,10 @@ Tools using this: `import_order`, `create_billing_order`, `create_advance_invoic
 
 - `manage-bom` skill — view/edit BOM (materials, consumption, placement).
 - `label-composition` skill — calculate EU textile composition label (EU Reg. 1007/2011) from BOM data. Returns label text per color variant with fiber percentages.
+
+## Material Ordering
+
+- `order-materials` skill — full flow from demand to Purchase Order.
+  - Algorithm 1: fetch demand (v_material_order_demand), classify above/below MOQ, present costs, manager decides ordered_qty, save decisions, create PO per supplier.
+  - Algorithm 2 (surplus): for below_moq materials — find candidate products, calculate bundle effect (domino), ROI_score per product (margin × rotation_factor / investment), interactive recalculation, return to Alg 1.
+  - Tools needed: `get_material_demand`, `get_surplus_candidates`, `save_material_decisions`, `create_material_po`.
