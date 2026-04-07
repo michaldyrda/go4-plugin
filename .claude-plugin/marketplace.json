@@ -1,0 +1,17 @@
+{
+  "name": "go4-plugin",
+  "owner": {
+    "name": "Michal Dyrda",
+    "url": "https://github.com/michaldyrda"
+  },
+  "plugins": [
+    {
+      "name": "go4-fashion",
+      "source": ".",
+      "description": "go4.fashion — AI-first operating system for premium fashion brands. Orders, invoicing, materials, BOM, shipping, knowledge base.",
+      "version": "0.1.0",
+      "category": "erp",
+      "keywords": ["fashion", "erp", "invoicing", "materials", "orders"]
+    }
+  ]
+}

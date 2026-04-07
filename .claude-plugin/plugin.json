@@ -5,7 +5,7 @@
   "author": {
     "name": "Michal"
   },
-  "repository": "https://github.com/michal/go4-plugin",
+  "repository": "https://github.com/michaldyrda/go4-plugin",
   "keywords": ["fashion", "erp", "invoicing", "materials", "orders"],
   "skills": "./skills/",
   "agents": "./agents/",
