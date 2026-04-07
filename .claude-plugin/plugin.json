@@ -12,20 +12,13 @@
   "mcpServers": {
     "go4": {
       "type": "http",
-      "url": "${user_config.go4_mcp_url}",
-      "headers": {
-        "Authorization": "Bearer ${user_config.go4_api_token}"
-      }
+      "url": "${user_config.go4_mcp_url}"
     }
   },
   "userConfig": {
     "go4_mcp_url": {
-      "description": "URL of your go4 MCP server (e.g. https://your-brand.railway.app/mcp)",
+      "description": "URL of your go4 MCP server (e.g. https://your-brand.up.railway.app/mcp). On first connection you will be asked to log in to your go4.fashion organization — Claude will store the credentials automatically.",
       "sensitive": false
-    },
-    "go4_api_token": {
-      "description": "API token for your go4.fashion organization",
-      "sensitive": true
     }
   }
 }
