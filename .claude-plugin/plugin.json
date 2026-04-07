@@ -12,13 +12,7 @@
   "mcpServers": {
     "go4": {
       "type": "http",
-      "url": "${user_config.go4_mcp_url}"
-    }
-  },
-  "userConfig": {
-    "go4_mcp_url": {
-      "description": "URL of your go4 MCP server (e.g. https://your-brand.up.railway.app/mcp). On first connection you will be asked to log in to your go4.fashion organization — Claude will store the credentials automatically.",
-      "sensitive": false
+      "url": "https://web-production-bdb8f.up.railway.app/mcp"
     }
   }
 }
