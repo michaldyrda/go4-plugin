@@ -31,10 +31,11 @@ The plugin format is the long-term target (auto-update wins). The skill bundle i
 - Action workflow skills (import-order, billing, new-expense, etc.)
 - Specialized agents (billing, materials, orders) — plugin only, agents are not supported in skill bundle
 
-**MCP Server** (separate repo: `go4 mcp/`, single multi-tenant deployment on Railway at `https://web-production-bdb8f.up.railway.app/mcp`) — contains:
-- 37+ tools (orders, invoicing, materials, BOM, colors, UPS, knowledge base)
-- Per-organization data isolation via OAuth
-- Business logic and integrations (Fakturownia, UPS, Supabase)
+**MCP Server** (separate repo: `go4-mcp/`, Vercel `https://go4-mcp-michaldyrda.vercel.app/mcp`) — contains:
+- Tools `go4_whoami` and `go4_search` (user JWT + RLS)
+- Per-user session via `mcp_user_sessions` in go4.fashion
+
+Stary serwer (`go4 mcp` na Railway) jest w `~/MyApps/archiwum/go4 mcp` — wyłączony 2026-09-18.
 
 **RAG** (in Supabase `ai_knowledge_base` per brand) — contains:
 - Brand-specific business rules (supplier terms, customer preferences, billing rules)
@@ -56,21 +57,11 @@ The plugin format is the long-term target (auto-update wins). The skill bundle i
 
 ## MCP Server Reference
 
-The MCP server (go4 mcp) has 37 tools across these categories:
-- System: test_connection
-- Orders: list_orders, import_order (2-stage), get_order_stats
-- Customers: get_customer
-- Invoicing: list_invoices, get_invoice_details, get_invoice_pdf, create_invoice, copy_fakturownia_invoice, copy_invoice_with_product_prices, create_fakturownia_product, list_fakturownia_products
-- Expenses: create_expense, add_expense_from_file, list_expenses, get_expense
-- Billing: create_billing_order (2-stage), create_advance_invoice (2-stage)
-- Materials: add_material, add_material_with_file, get_material, update_material
-- Suppliers: add_supplier, update_supplier
-- Colors: get_color, list_colors, set_color_production_tags, list_production_tags
-- BOM: get_product_bom, set_bom_item
-- Knowledge: knowledge_capture, knowledge_search
-- Shipping: ups_rate_shipment, ups_track_shipment
-- Media: assign_staging_media (2-stage)
-- Collections: import_collection (2-stage, placeholder)
+The MCP server (`go4-mcp`, Vercel) has two tools:
+- `go4_whoami` — organization and role of the signed-in person
+- `go4_search` — read entities in that organization (RLS)
+
+Write tools from the old Railway server are gone.
 
 ## Testing
 
@@ -83,7 +74,7 @@ Reload after changes: `/reload-plugins` in Claude Code session.
 **Skill bundle (Cowork on Pro):**
 1. Run `dist/build.sh` to regenerate `dist/go4-fashion.zip`
 2. In Claude Desktop → Customize → Skills → + → Upload `go4-fashion.zip`
-3. Manager also adds MCP connector once: Settings → Connectors → Add custom → URL `https://web-production-bdb8f.up.railway.app/mcp` → OAuth login
+3. Manager also adds MCP connector once: Settings → Connectors → Add custom → URL `https://go4-mcp-michaldyrda.vercel.app/mcp` → OAuth login
 
 ## Workflow when editing skill content
 

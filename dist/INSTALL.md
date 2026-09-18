@@ -4,14 +4,13 @@ Krótka instrukcja dla managera. **Robisz to raz**, potem Claude wie wszystko o 
 
 ## Co dostaniesz
 
-Po instalacji możesz w Claude pisać po polsku rzeczy w stylu:
+Po instalacji Claude **czyta** dane Twojej marki w go4 (zamówienia, BOM, stany, klienci). Logujesz się swoim kontem go4. Zapisy — faktury, import zamówień, UPS — w tym connectorze jeszcze nie są.
 
-- "Wczytaj to zamówienie z PDF" → Claude zaimportuje je do go4
-- "Wystaw fakturę dla Acme za zamówienie 1234" → Claude przeprowadzi cały cykl billingowy
-- "Dodaj koszt z tej faktury PDF" → Claude założy expense
-- "Zrób raport za marzec" → Claude zbierze statystyki, faktury, koszty
-- "Zamów materiały na kolekcję SS26" → Claude policzy zapotrzebowanie i przygotuje zamówienia
-- ...i ~30 innych operacji go4.fashion
+Pytania w stylu:
+
+- "Kim jestem w go4?"
+- "Pokaż 5 ostatnich zamówień"
+- "Jaki jest BOM produktu X"
 
 ## Czego potrzebujesz
 
@@ -26,7 +25,7 @@ To jest połączenie z Twoimi danymi w go4.fashion.
 2. **Settings → Connectors → Add custom connector**
 3. Wklej URL:
    ```
-   https://web-production-bdb8f.up.railway.app/mcp
+   https://go4-mcp-michaldyrda.vercel.app/mcp
    ```
 4. Nazwa: `go4`
 5. Kliknij **Add**

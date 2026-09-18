@@ -82,7 +82,7 @@ Two artifacts are sent to a new customer once:
 1. **`INSTALL.md`** — Polish setup instructions (connector + skill upload + first test).
 2. **`go4-fashion.zip`** — the bundle, downloaded from `https://github.com/michaldyrda/go4-plugin/raw/main/dist/go4-fashion.zip`.
 
-The customer also needs to add the go4 MCP server as a custom connector once (URL: `https://web-production-bdb8f.up.railway.app/mcp`, OAuth login). The skill provides the instructions and reasoning; the MCP connector provides the actual tools. **Both must be present** for the system to work — the skill alone is just text, the MCP connector alone is just tools without context.
+The customer also needs to add the go4 MCP server as a custom connector once (URL: `https://go4-mcp-michaldyrda.vercel.app/mcp`, OAuth login). The skill provides the instructions and reasoning; the MCP connector provides the actual tools. **Both must be present** for the system to work — the skill alone is just text, the MCP connector alone is just tools without context.
 
 ## Relationship to the plugin (`/skills`, `/agents`)
 
