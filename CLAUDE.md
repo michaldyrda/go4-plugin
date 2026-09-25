@@ -31,7 +31,7 @@ The plugin format is the long-term target (auto-update wins). The skill bundle i
 - Action workflow skills (import-order, billing, new-expense, etc.)
 - Specialized agents (billing, materials, orders) — plugin only, agents are not supported in skill bundle
 
-**MCP Server** (separate repo: `go4-mcp/`, Vercel `https://go4-mcp-michaldyrda.vercel.app/mcp`) — contains:
+**MCP Server** (separate repo: `go4-mcp/`, Vercel `https://go4-mcp.vercel.app/mcp`) — contains:
 - Tools `go4_whoami` and `go4_search` (user JWT + RLS)
 - Per-user session via `mcp_user_sessions` in go4.fashion
 
@@ -74,7 +74,7 @@ Reload after changes: `/reload-plugins` in Claude Code session.
 **Skill bundle (Cowork on Pro):**
 1. Run `dist/build.sh` to regenerate `dist/go4-fashion.zip`
 2. In Claude Desktop → Customize → Skills → + → Upload `go4-fashion.zip`
-3. Manager also adds MCP connector once: Settings → Connectors → Add custom → URL `https://go4-mcp-michaldyrda.vercel.app/mcp` → OAuth login
+3. Manager also adds MCP connector once: Settings → Connectors → Add custom → URL `https://go4-mcp.vercel.app/mcp` → OAuth login
 
 ## Workflow when editing skill content
 

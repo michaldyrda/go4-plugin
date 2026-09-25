@@ -12,7 +12,7 @@
   "mcpServers": {
     "go4": {
       "type": "http",
-      "url": "https://go4-mcp-michaldyrda.vercel.app/mcp"
+      "url": "https://go4-mcp.vercel.app/mcp"
     }
   }
 }
