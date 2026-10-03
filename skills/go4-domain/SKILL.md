@@ -18,7 +18,7 @@ You are working with go4.fashion: collections, production, orders and stock for 
 - **size_group** → size hierarchy per org (XS-XL, 36-44, numeric).
 
 ### Orders & Customers
-- **customer** → B2B client (boutique/retailer). Has tier, discount %, preferred currency, language.
+- **customer** → the buyer the brand sells to: a boutique, a chain or the brand's own shop. Has tier, discount %, preferred currency, language.
 - **sales_order** → order header. Status: pending → confirmed → in_production → shipped → completed / cancelled.
 - **sales_order_item** → line item = product_variant + quantity + unit_price at order time.
 
