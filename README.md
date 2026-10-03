@@ -1,6 +1,6 @@
 # go4-fashion — Claude Code Plugin
 
-Plugin for [Claude Code](https://claude.ai/code) that connects to the **go4.fashion** platform — an AI-first operating system for premium fashion brands.
+Plugin for [Claude Code](https://claude.ai/code) that connects to the **go4.fashion** platform: collections, production, orders and stock for premium fashion brands.
 
 ## What it does
 

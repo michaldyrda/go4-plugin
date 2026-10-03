@@ -6,7 +6,7 @@ user-invocable: false
 
 # go4.fashion Domain Model
 
-You are working with go4.fashion — an operating system for premium fashion brands. Understand this domain before taking any action.
+You are working with go4.fashion: collections, production, orders and stock for premium fashion brands. Understand this domain before taking any action.
 
 ## Core Entities
 
