@@ -20,8 +20,7 @@ claude --plugin-dir ./go4-plugin
 ```
 
 On first run, the plugin prompts for:
-- **MCP server URL** — your brand's go4 MCP deployment (e.g., `https://your-brand.railway.app/mcp`)
-- **API token** — stored securely in system keychain
+- **MCP server** — `https://go4-mcp.vercel.app/mcp` (set in `.claude-plugin/plugin.json`); sign in to go4 when Claude asks
 
 ## Skills
 
@@ -35,7 +34,6 @@ On first run, the plugin prompts for:
 | `monthly-report` | Monthly business overview with stats |
 | `sync-products` | Sync products to invoicing system |
 | `ship` | UPS rate quotes and package tracking |
-| `manage-bom` | View/edit Bill of Materials |
 | `import-collection` | Import product collection from document |
 
 ### Background knowledge (auto-loaded by Claude)
@@ -45,12 +43,13 @@ On first run, the plugin prompts for:
 | `go4-domain` | Domain model, entities, relationships, business rules |
 | `rag-protocol` | How to use the brand's knowledge base (search before act, capture new rules) |
 
+Materials, BOM, material orders and composition are not in this plugin: the `go4-fashion` skill served by the go4 MCP server (`modules/materials.md`, https://go4-mcp.vercel.app/go4-fashion.zip).
+
 ## Agents
 
 | Agent | Specialization |
 |-------|---------------|
 | `billing-agent` | Invoicing, billing orders, advances, currency conversion |
-| `materials-agent` | Materials, suppliers, BOM, composition, pricing |
 | `orders-agent` | Order lookups, imports, statistics, customer data |
 
 ## Architecture
@@ -58,7 +57,7 @@ On first run, the plugin prompts for:
 ```
 Plugin (generic, same for all brands)
   ↓ connects to
-MCP Server (per-brand deployment on Railway, with brand's credentials)
+MCP Server go4-mcp (https://go4-mcp.vercel.app/mcp, one for all brands; the signed-in person's brand and role)
   ↓ reads/writes
 Supabase (per-brand database with RAG knowledge base)
 ```

@@ -25,10 +25,9 @@ The go4 MCP server is connected separately as a custom connector. It exposes ~37
 - **Invoicing**: `list_invoices`, `get_invoice_details`, `get_invoice_pdf`, `create_invoice`, `copy_fakturownia_invoice`, `copy_invoice_with_product_prices`, `create_fakturownia_product`, `update_fakturownia_product`, `list_fakturownia_products`
 - **Expenses**: `create_expense`, `add_expense_from_file`, `list_expenses`, `get_expense`
 - **Billing**: `create_billing_order` (2-stage), `create_advance_invoice` (2-stage)
-- **Materials**: `manage_material`, `manage_material_order`, `get_material`, `list_materials`, `get_material_demand`
+- **Materials, BOM**: not in this skill — the `go4-fashion` skill served by the go4 MCP server (`modules/materials.md`, https://go4-mcp.vercel.app/go4-fashion.zip)
 - **Suppliers**: `manage_supplier`
 - **Colors**: `get_color`, `list_colors`, `set_color_production_tags`, `list_production_tags`
-- **BOM**: `get_product_bom`, `set_bom_item`
 - **Knowledge base**: `knowledge_capture`, `knowledge_search`
 - **Shipping**: `ups_rate_shipment`, `ups_track_shipment`
 - **Media**: `list_media`, `assign_staging_media` (2-stage), `reorder_media`, `update_media_assignment`
@@ -59,10 +58,8 @@ When the manager asks for one of the workflows below, **read the corresponding f
 | "raport miesięczny" / monthly report / business overview | `workflows/monthly-report.md` |
 | "zsynchronizuj produkty" / sync products to invoicing / Fakturownia products | `workflows/sync-products.md` |
 | "wycena wysyłki" / "śledź paczkę" / shipping rate / track package / UPS | `workflows/ship.md` |
-| "BOM produktu" / view/edit Bill of Materials / consumption | `workflows/manage-bom.md` |
 | "import kolekcji" / import collection from Shopify/Excel/CSV | `workflows/import-collection.md` |
-| "skład produktu" / EU composition label / textile label per Reg. 1007/2011 | `workflows/label-composition.md` |
-| "zamów materiały" / material ordering / Purchase Order / surplus analysis | `workflows/order-materials.md` |
+| "materiał" / "BOM" / "zamów materiały" / "skład" / materials, BOM, material orders, composition | not in this skill — Materials, BOM, material orders and composition: the `go4-fashion` skill served by the go4 MCP server (`modules/materials.md`, https://go4-mcp.vercel.app/go4-fashion.zip). |
 
 If the request mixes intents (e.g. "import this order and bill it"), read both files and execute them in sequence.
 

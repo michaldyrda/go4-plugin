@@ -54,10 +54,7 @@ go4-fashion/
     ├── monthly-report.md
     ├── sync-products.md
     ├── ship.md
-    ├── manage-bom.md
-    ├── import-collection.md
-    ├── label-composition.md
-    └── order-materials.md
+    └── import-collection.md
 ```
 
 `SKILL.md` is the entry point that Claude loads when the skill is triggered. It is intentionally short — it tells Claude what go4.fashion is, points at `knowledge/` files for context, and provides a router table mapping manager intent to the matching `workflows/*.md` file. Claude reads only the workflow file relevant to the current task — full content is not loaded into context unnecessarily. This follows Anthropic's recommended pattern for skills: short SKILL.md + supporting files loaded on demand.
